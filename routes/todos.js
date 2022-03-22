@@ -1,4 +1,5 @@
 const { getTodos, newTodo, updateTodo, deleteTodo, deleteAllTodo } = require('../controllers/todos');
+const { errorHandle } = require('../base/response');
 
 const todoRouter = async (req, res) => {
   let body = '';
@@ -26,7 +27,7 @@ const todoRouter = async (req, res) => {
     res.writeHead(200);
     res.end();
   } else {
-    ErrorHandle(res, 404);
+    errorHandle(res, 404);
   }
 }
 
